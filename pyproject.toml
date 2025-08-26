@@ -1,7 +1,7 @@
 [project]
-name = "my-project"
-version = "0.0.1"
-description = "Replace this with your project description"
+name = "pipelex-simple-webagent"
+version = "0.1.0"
+description = "A simple web search agent built with Pipelex that performs intelligent web searches and generates comprehensive responses"
 # authors = [{ name = "Your Name", email = "your.email@example.com" }]
 license = "MIT"
 readme = "README.md"
@@ -12,7 +12,16 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-dependencies = ["pipelex[mistralai,anthropic,google,bedrock,fal]==0.6.8"]
+dependencies = [
+    "pipelex[mistralai,anthropic,google,bedrock,fal]==0.6.8",
+    "trafilatura>=1.10.0",
+    "python-dateutil>=2.8.2",
+    "limits>=3.13.0",
+    "gradio>=4.44.0",
+    "httpx>=0.25.0",
+    "filelock>=3.13.0",
+    "pandas>=2.0.0",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -36,14 +45,17 @@ dev = [
 
 [project.urls]
 Homepage = "https://pipelex.com"
-Repository = "https://github.com/yourusername/my-project"  # Replace with your repository URL
+Repository = "https://github.com/yourusername/pipelex-simple-webagent"  # Replace with your repository URL
 Documentation = "https://docs.pipelex.com/"
+
+[project.scripts]
+simple-webagent = "simple_webagent.cli:app"
 
 [tool.uv]
 required-version = ">=0.7.2"
 
 [tool.mypy]
-packages = ["my_project"]
+packages = ["simple_webagent"]
 check_untyped_defs = true
 exclude = "^.*\\.venv/.*$"
 mypy_path = "."
@@ -57,7 +69,7 @@ ignore_missing_imports = true
 module = ["json2html"]
 
 [tool.pyright]
-include = ["my_project"]
+include = ["simple_webagent"]
 analyzeUnannotatedFunctions = true
 deprecateTypingAliases = false
 disableBytesTypePromotions = true
