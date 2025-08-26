@@ -15,10 +15,13 @@
 
 ## 🚀 Quick Start
 
+
+🌟 Star This Repository - then 👇🏻
+
 ### 1. Clone and Setup
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Josephrp/pipelex-simple-webagent
 cd pipelex-simple-webagent
 
 # Run the setup script to configure environment
